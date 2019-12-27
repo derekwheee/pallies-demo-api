@@ -8,7 +8,7 @@ const PluginConfig = require('./lib/plugins/schwifty').plugins.options;
 // Take schwifty registration's knex option
 // but specify the plugin's migrations directory
 
-console.log(Hoek.applyToDefaults(
+module.exports = Hoek.applyToDefaults(
     {
         migrations: {
             directory: [
@@ -21,4 +21,4 @@ console.log(Hoek.applyToDefaults(
         .get('/register/plugins', process.env)
         .find(({ plugin }) => plugin === 'schwifty')
         .options.knex
-));
+);
