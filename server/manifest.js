@@ -35,7 +35,7 @@ module.exports = new Confidence.Store({
                 options: {}
             },
             {
-                plugin: '../node_modules/pallies/lib',
+                plugin: 'pallies',
                 options: {
                     isDev: {
                         $filter: {

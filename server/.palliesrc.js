@@ -75,7 +75,7 @@ module.exports = {
             database: { $env: 'DB_DATABASE' }
         },
         migrations: {
-            stub: 'Schwifty.migrationsStubPath'
+            stub: 'Schwifty.migrationsStubPath',
         }
     }
 }
