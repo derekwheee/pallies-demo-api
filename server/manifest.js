@@ -3,7 +3,6 @@
 const Dotenv = require('dotenv');
 const Confidence = require('confidence');
 const Toys = require('toys');
-const PalliesConfig = require(`${__dirname}/.palliesrc`);
 
 // Pull .env into process.env
 Dotenv.config({ path: `${__dirname}/.env` });
@@ -32,10 +31,6 @@ module.exports = new Confidence.Store({
         plugins: [
             {
                 plugin: '../lib', // Main plugin
-                options: {}
-            },
-            {
-                plugin: 'pallies',
                 options: {
                     isDev: {
                         $filter: {
@@ -44,8 +39,7 @@ module.exports = new Confidence.Store({
                         $default: false,
                         production: false,
                         development: true
-                    },
-                    ...PalliesConfig
+                    }
                 }
             },
             {
